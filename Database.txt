@@ -1,0 +1,15 @@
+CREATE TABLE Users 
+(
+   ID Integer PRIMARY KEY AUTO_INCREMENT,
+   Name varchar(70) NOT NULL ,
+   Email varchar(50) UNIQUE
+);
+
+CREATE TABLE Posts
+(
+   Id Integer PRIMARY KEY AUTO_INCREMENT,
+   User_ID Integer NOT NULL,
+   Body varchar(1000) NOT NULL,
+   Date DATE NOT NULL,
+   CONSTRAINT FOREIGN KEY (User_ID) REFERENCES Users(ID) ON DELETE CASCADE 
+);
